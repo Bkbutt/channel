@@ -3,11 +3,12 @@ const app = express();
 const https = require('https');
 const axios = require('axios');
 const url = require('url');
+const user = require('./routes/auth')
 // require('dotenv').config();
 // require("./db/conn");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(require("./routes/auth"));
+app.use(user);
 require('dotenv').config({path:'./.env'})
 const connect = require('./dataB/db/conn');
 connect();
