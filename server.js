@@ -12,7 +12,7 @@ app.use(require("./routes/auth"));
 // require('dotenv').config({path:'./.env'})
 // const connect = require('./dataB/db/conn');
 // connect();
-
+const port = process.env.PORT || 8000;
 let urlNum ="";
 //calling get api using axios
 async function fetchData(){
@@ -71,7 +71,7 @@ app.post('/hotel-api', (req, res) => {
     Cookie: 'mycookie',
     'Content-Type': 'application/json',
   };
-
+ 
   let requestBody = '';
 
   req.on('data', (chunk) => {
@@ -127,6 +127,6 @@ app.use((req, res) => {
 });
 
 // Start the server
-app.listen(8000, () => {
-  console.log('Server listening on port 8000');
-});
+app.listen(port,()=>{
+  console.log(`server running ${port}`)
+})
