@@ -3,15 +3,14 @@ const app = express();
 const https = require('https');
 const axios = require('axios');
 const url = require('url');
-const dotenv = require('dotenv');
-require('dotenv').config();
-require("./db/conn");
+// require('dotenv').config();
+// require("./db/conn");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(require("./routes/auth"));
-// require('dotenv').config({path:'./.env'})
-// const connect = require('./dataB/db/conn');
-// connect();
+require('dotenv').config({path:'./.env'})
+const connect = require('./dataB/db/conn');
+connect();
 const port = process.env.PORT || 8000;
 let urlNum ="";
 //calling get api using axios
