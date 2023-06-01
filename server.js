@@ -8,7 +8,7 @@ const user = require('./routes/auth')
 // require("./db/conn");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(user);
+app.use('/',user);
 require('dotenv').config({path:'./.env'})
 const connect = require('./dataB/db/conn');
 connect();
