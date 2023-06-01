@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/',user);
 require('dotenv').config({path:'./.env'})
-const connect = require('./dataB/db/conn');
+const connect = require('./db/conn');
 connect();
 const port = process.env.PORT || 8000;
 let urlNum ="";
