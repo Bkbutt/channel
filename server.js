@@ -17,7 +17,7 @@ let urlNum ="";
 //calling get api using axios
 async function fetchData(){
   try{
-    const response =await axios.get("http://localhost:8000/user/64783046b9b539aed612fb4f");
+    const response =await axios.get("http://127.0.0.1:8000/user/64783046b9b539aed612fb4f");
     console.log('API response:',response.data);
     urlNum = response.data.user.urlNo;
     console.log('urlNum is:',urlNum);
